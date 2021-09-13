@@ -39,6 +39,7 @@ body {
   padding: 10px;
   transition: 0.6s;
   height: 520px;
+  background-color: rgb(172, 207, 185);
 }
 .single-product:hover {
   box-shadow: 6px 6px 9px gray;
