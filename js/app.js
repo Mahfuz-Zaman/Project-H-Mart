@@ -249,7 +249,7 @@ const loadProducts = () => {
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
-    const image = product.image;
+    const image = product.image; //----------------product image name error solve
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product bg-info m-2 rounded">
@@ -259,11 +259,12 @@ const showProducts = (products) => {
       <h4>${product.title}</h4>
       <p>Category: ${product.category}</p>
       <h5>Price: $ ${product.price}</h5>
+      <div class="bg-dark rounded text-warning mt-2">
+      <p>Rating Average: ${product.rating.rate} <br> Rating Count:${product.rating.count}</p> 
+    </div>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button>
-      <div class="bg-dark rounded text-warning mt-2">
-  <p>Customer reviews: ${product.rating.rate} <br> Total Count:${product.rating.count}</p>
-</div>
+
 
       </div>
       `;
@@ -277,7 +278,7 @@ const addToCart = (id, price) => {
   updatePrice("price", price);
 
   updateTaxAndCharge();
-  updateTotal();
+  updateTotal(); //Function call First time for error solve 
   document.getElementById("total-Products").innerText = count;
 };
 
@@ -289,17 +290,17 @@ const getInputValue = (id) => {
 
 // main price update function
 const updatePrice = (id, value) => {
-  updateTotal();
+  updateTotal(); //Function call second time for error solve 
   const convertedOldPrice = getInputValue(id);
   const convertPrice = parseFloat(value);
   const total = convertedOldPrice + convertPrice;
-  document.getElementById(id).innerText = (Math.round(total * 100) / 100).toFixed(2);
+  document.getElementById(id).innerText = (Math.round(total * 100) / 100).toFixed(2); //Fix calculation for error
 };
 
 // set innerText function
 const setInnerText = (id, value) => {
-  updateTotal();
-  document.getElementById(id).innerText = (Math.round(value * 100) / 100).toFixed(2);
+  updateTotal(); //Function call Third time for error solve 
+  document.getElementById(id).innerText = (Math.round(value * 100) / 100).toFixed(2); //Fix calculation for error
 };
 
 // update delivery charge and total Tax
