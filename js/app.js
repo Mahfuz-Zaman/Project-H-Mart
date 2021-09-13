@@ -260,7 +260,7 @@ const showProducts = (products) => {
       <p>Category: ${product.category}</p>
       <h5>Price: $ ${product.price}</h5>
       <div class="fw-bold rounded  mt-2">
-      <p>Rating Average: <span class="text-danger">${product.rating.rate} </span> <br> Rating Count: <span class="text-danger">${product.rating.count}</span></p>
+      <h5>Rating:<span id="${product.id}"></span>(<span class="text-danger">${product.rating.rate}</span>)<br>Total Rating Count: <span class="text-danger">${product.rating.count}</span></p>
     </div>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button>
@@ -269,8 +269,33 @@ const showProducts = (products) => {
       </div>
       `;
     document.getElementById("all-products").appendChild(div);
+    dynamicRating(product.id, product.rating.rate);
+
   }
 };
+//dynamic stars
+const dynamicRating = (ratingId, stars) => {
+  let pid = parseInt(ratingId);
+  let star = Math.round(stars);
+
+  if (star === 1) {
+    document.getElementById(pid).innerHTML = '<i class="fas fa-star text-warning"></i><i class="fas fa-star text-dark"></i><i class="fas fa-star text-dark"></i><i class="fas fa-star text-dark"></i><i class="fas fa-star text-dark"></i>';
+  }
+  else if (star === 2) {
+    document.getElementById(pid).innerHTML = '<i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-dark"></i><i class="fas fa-star text-dark"></i><i class="fas fa-star text-dark"></i>';
+  }
+  else if (star === 3) {
+    document.getElementById(pid).innerHTML = '<i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-dark"></i><i class="fas fa-star text-dark"></i>';
+  }
+  else if (star === 4) {
+    document.getElementById(pid).innerHTML = '<i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-dark"></i>';
+  }
+  else if (star === 5) {
+    document.getElementById(pid).innerHTML = '<i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>';
+  }
+}
+
+
 // Product count part
 let count = 0;
 const addToCart = (id, price) => {

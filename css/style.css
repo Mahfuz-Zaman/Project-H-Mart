@@ -4,13 +4,9 @@ body {
 }
 .search-field {
   border: none;
-  border-radius: 50px;
   padding: 5px;
   outline: none;
-}
-.search-field:hover {
-  outline: none;
-  border: none;
+  background-color: rgb(235, 240, 252);
 }
 .search-box {
   border: 1px solid rgb(3, 118, 211);
@@ -39,7 +35,7 @@ body {
   padding: 10px;
   transition: 0.6s;
   height: 520px;
-  background-color: rgb(172, 207, 185);
+  background-color: rgb(227, 240, 231);
 }
 .single-product:hover {
   box-shadow: 6px 6px 9px gray;
@@ -59,7 +55,7 @@ body {
   border-radius: 5px;
   margin-right: 30px;
   position: fixed;
-  background-color: rgb(207, 207, 233);
+  background-color: rgb(227, 240, 231);
 }
 .cart-main {
   padding-right: 30px;
