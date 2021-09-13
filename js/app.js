@@ -252,14 +252,14 @@ const showProducts = (products) => {
     const image = product.image; //----------------product image name error solve
     const div = document.createElement("div");
     div.classList.add("product");
-    div.innerHTML = `<div class="single-product bg-info m-2 rounded">
+    div.innerHTML = `<div class="single-product  m-2 rounded">
       <div>
     <img class="product-image" src=${image}></img>
       </div>
       <h4>${product.title}</h4>
       <p>Category: ${product.category}</p>
       <h5>Price: $ ${product.price}</h5>
-      <div class="bg-dark rounded text-warning mt-2">
+      <div class="fw-bold rounded text-warning mt-2">
       <p>Rating Average: ${product.rating.rate} <br> Rating Count: ${product.rating.count}</p> 
     </div>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
@@ -325,6 +325,6 @@ const updateTotal = () => {
   const grandTotal =
     getInputValue("price") + getInputValue("delivery-charge") +
     getInputValue("total-tax");
-  document.getElementById("total").innerText = grandTotal;
+  document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
 loadProducts();
