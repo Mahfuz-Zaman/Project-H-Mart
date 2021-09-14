@@ -19,16 +19,12 @@
 
 <body>
   <header>
-
+    <h1 class="text-center mt-5 text-danger">Welcome To H-Mart</h1>
     <!-- Search Area  -->
-    <div class="search-field">
-      <h1 class="text-center mt-5 text-danger">Welcome To H-Mart</h1>
-
-      <div class="search-box">
-        <input id="input-field" class="search-field" type="text" placeholder="Search Your Product">
-        <button type="button" class="btn btn-primary search-button" data-toggle="button" aria-pressed="false"
-          autocomplete="off" id="search-btn" onclick="loadProducts()">Search</button>
-      </div>
+    <div class="input-group mb-3 w-25 mx-auto">
+      <input type="text" class="form-control" placeholder="Search Your Product" aria-label="Recipient's username"
+        aria-describedby="button-addon2">
+      <button class="btn btn-outline-secondary btn-primary text-white" type="button" id="button-addon2">Search</button>
     </div>
   </header>
   <main class="main">
@@ -86,7 +82,7 @@
             </tbody>
           </table>
           <div class="parces text-center">
-            <button class="btn btn-primary text-center">Buy Now</button>
+            <button class="btn btn-success text-center">Buy Now</button>
           </div>
         </div>
       </div>
