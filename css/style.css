@@ -40,7 +40,7 @@ body {
 .single-product:hover {
   box-shadow: 6px 6px 9px gray;
   border-radius: 10px;
-  background-color: rgb(235, 240, 252);
+  background-color: rgb(255, 255, 255);
 }
 .product-image {
   width: 150px;
